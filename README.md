@@ -1,19 +1,18 @@
 # Information visualization
 
-> This Project Contains Code and Data(sources) that are used to create Plots regarding to Exercise 2 of lecture 172383 - Informationsvisualisierung.
+> This project contains code and data (sources) that are used to create graphics for exercise 2 of the course 172383 - Informationsvisualisierung.
  
 ## Folder structure
 
->- The Name of the folder indicates the type of the Graph like "Bar, Curve, Bar&curve" 
->- Each Folder is structured:
+>- The name of the folder indicates the type of graph as "Bar, Curve, Bar and Curve". 
+>- Each file is structured:
 
-     Data: Folder that contains data that is used to create the plot.
-     Code: Folder that contains the code that generates the plot.
-     Readme.md: contains the source and result.
-                   
+     Data: Folder that contains the data used to create the plot.
+     Code: folder containing the code that generates the plot.
+     Readme.md: contains notes on the data and the code.                   
 
 
-## Libraries are used during the extraction, mapping of the data and the generation of graphs are: 
+## The libraries are used during extraction, data matching and graph generation: 
 
 ```r
 library(ggridges)
@@ -25,6 +24,19 @@ library(hrbrthemes)
 library(viridis)
 library(plotly)
 library(lubridate)
+
+```
+## Global Theme : This theme is applied to all graphics.
+
+```r
+Global_theme <- function(Ggplot) {
+  Themed_Graph=Gplot+ theme( axis.title.y  = element_text(hjust = 0.5,size = 13,face = "bold"),
+         axis.title.x = element_text(hjust = 0.5,size = 13,face = "bold"),  plot.title = element_text(hjust = 0.5, family = "Arial",face = "bold",size = 17),
+                             legend.background = element_rect(fill = "white",colour = "grey",size = 2),
+                             panel.grid.major = element_line(colour ="grey70" ,size = 0.1))
+
+  return(Themed_Graph)
+}
 
 ```
 
